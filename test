@@ -7,6 +7,7 @@ RUN echo 'root:root123' | chpasswd
 RUN mkdir /var/run/sshd
 CMD ["/usr/sbin/sshd", "-D"]
 EXPOSE 22
+EXPOSE 443
 
 docker build -t sshimage .
 docker run -itd --name sshcontainer -p "2323:22" sshimage
